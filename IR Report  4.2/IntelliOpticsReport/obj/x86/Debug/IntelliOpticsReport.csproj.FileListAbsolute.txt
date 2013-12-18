@@ -1,0 +1,159 @@
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\DynamicDataDisplay.dll
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\WPFToolkit.dll
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\Documents and Settings\Administrator\Desktop\IntelliOpticsReport\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\Documents and Settings\Administrator\Desktop\30-05-2012\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\Documents and Settings\Administrator\Desktop\04-06-2012IntelliOptics\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\WPFToolkit.dll
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\WPFToolkit.pdb
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.baml
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\projects\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\bin\Debug\WPFToolkit.pdb
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.baml
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\Users\gary\Documents\Abee\Rupindar\SHM_PCWPF\SHM_PCWPF\IntelliOpticsReport\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\bin\Debug\WPFToolkit.pdb
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csprojResolveAssemblyReference.cache
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\App.baml
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csproj.GenerateResource.Cache
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\cms_dev\IRIB\IR Report\IntelliOpticsReport  2.1\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\App.baml
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csproj.GenerateResource.Cache
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\cms_dev\IRIB\IR Report\IR Report  2.1(DB_Server)\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csprojResolveAssemblyReference.cache
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\App.baml
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csproj.GenerateResource.Cache
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\cms_dev\Papaloapan\Reports\IntelliOptics Reports 3.1.22\IR Report  2.2\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled
+C:\cms_dev\Papaloapan\Reports\IR Report  4.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\cms_dev\Papaloapan\Reports\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\cms_dev\Papaloapan\Reports\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe.config
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.exe
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.pdb
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.exe
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\bin\Debug\IntelliOpticsReport.pdb
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csprojResolveAssemblyReference.cache
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\MainWindow.baml
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\App.baml
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\MainWindow.g.cs
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\App.g.cs
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport_MarkupCompile.cache
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.g.resources
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.Properties.Resources.resources
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\IntelliOpticsReport.csproj.GenerateResource.Cache
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\RdlCompile.cache
+C:\Users\user\Downloads\IR Report  4.2\IntelliOpticsReport\obj\x86\Debug\RdlCompile.compiled

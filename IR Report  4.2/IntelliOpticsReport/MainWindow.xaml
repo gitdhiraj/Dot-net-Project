@@ -1,0 +1,801 @@
+﻿<Window x:Class="IntelliOpticsReport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+    Title="Graph" Height="Auto" Width="Auto" WindowStartupLocation="Manual" WindowState="Maximized" Loaded="Window_Loaded" ResizeMode="CanResize" Topmost="False" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" SizeToContent="Manual" HorizontalContentAlignment="Stretch" Icon="/IntelliOpticsReport;component/Image/GraphIcon.ico" xmlns:my="clr-namespace:System;assembly=mscorlib">
+    <Window.Resources>
+        <my:Double x:Key="Height1">750</my:Double>
+    </Window.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Name="scrollMain" HorizontalScrollBarVisibility="Auto">
+        <Grid MinHeight="0" MinWidth="0" ShowGridLines="False" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TabControl Height="Auto" BorderThickness="0" HorizontalAlignment="Stretch" Name="tabControl1" VerticalAlignment="Stretch" Width="Auto" Margin="0,2,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" SelectionChanged="tabControl1_SelectionChanged" MinHeight="0" MinWidth="0">
+                <TabItem Header="Report" Name="tabFilter" IsSelected="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid ShowGridLines="False" Name="gridtabfilter">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="225*" />
+                                <RowDefinition Height="61*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190*" />
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="115" />
+                                <ColumnDefinition Width="12" />
+                                <ColumnDefinition Width="98" />
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="12" />
+                                <ColumnDefinition Width="29" />
+                                <ColumnDefinition Width="440" />
+                                <ColumnDefinition Width="403" />
+                                <ColumnDefinition Width="13*" />
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Height="245" Margin="-4,-2,0,0" Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Fill="#FFCEC9EE" MinHeight="0" MinWidth="0" Grid.ColumnSpan="12" Width="Auto" HorizontalAlignment="Stretch" FlowDirection="LeftToRight" />
+                            <Label Content="Start Date" Height="19" HorizontalAlignment="Left" Margin="37,91,0,0" Name="lblStartDate" VerticalAlignment="Top" Width="64" Target="{Binding}" Padding="0" IsHitTestVisible="True" FontSize="12" />
+                            <Label Content="End Date" Height="21" HorizontalAlignment="Left" Margin="37,123,0,0" Name="lblEndDate" VerticalAlignment="Top" Width="64" Padding="0" FontSize="12" />
+                            <Label Content="Sensor Reading Greater Than" Height="18" HorizontalAlignment="Left" IsHitTestVisible="True" Margin="37,158,0,0" Name="lblSensorReading" Padding="0" Target="{Binding}" VerticalAlignment="Top" Width="167" FontSize="12" Grid.ColumnSpan="3" />
+                            <Label Height="39" HorizontalAlignment="Left" Margin="32,185,0,0" Name="lblSelect" VerticalAlignment="Top" Width="157">
+                                <TextBlock Width="Auto" TextWrapping="Wrap" Height="Auto" Text="Select To See Peak Events All Data" FontSize="12"></TextBlock>
+                            </Label>
+                            <Label Content="Sensor Reading Less Than" Height="25" HorizontalAlignment="Left" IsHitTestVisible="True" Margin="101,159,0,0" Name="label3" Padding="0" Target="{Binding}" VerticalAlignment="Top" Grid.Column="8" Width="152" FontSize="12" />
+                            <TextBlock Margin="101,84,0,0" Text="Start Time (HH:MMPM or HH:MMAM)" TextWrapping="Wrap" Width="157" Grid.Column="8" HorizontalAlignment="Left" FontSize="12" Height="35" VerticalAlignment="Top" />
+                            <TextBlock Margin="101,121,0,0" Text="End Time (HH:MMPM or HH:MMAM)" TextWrapping="Wrap" Grid.Column="8" Width="174" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" />
+
+
+                            <DatePicker Height="25" HorizontalAlignment="Left" Margin="20,86,0,0" Name="dtpStartDate" VerticalAlignment="Top" Width="146" SelectedDateChanged="dtpStartDate_SelectedDateChanged" Grid.Column="2" Grid.ColumnSpan="3" />
+                            <DatePicker Height="25" HorizontalAlignment="Left" Margin="20,120,0,0" Name="dtpEndDate" VerticalAlignment="Top" Width="146" SelectedDateChanged="dtpEndDate_SelectedDateChanged" Grid.Column="2" Grid.ColumnSpan="3" />
+                            <TextBox Margin="20,156,0,0" Name="NUDTextBox" Height="25" Grid.Column="2" Grid.ColumnSpan="3" PreviewKeyDown="NUDTextBox_PreviewKeyDown" PreviewKeyUp="NUDTextBox_PreviewKeyUp" TextChanged="NUDTextBox_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Left" Width="124" />
+                            <RepeatButton Name="NUDButtonUP"  Grid.Column="4" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="16,155,0,0" Width="21" Click="NUDButtonUP_Click" HorizontalAlignment="Left" Height="14" VerticalAlignment="Top">5</RepeatButton>
+                            <RepeatButton Name="NUDButtonDown"  Grid.Column="4" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="16,168,0,0" Width="21" Click="NUDButtonDown_Click" HorizontalAlignment="Left" Height="14" VerticalAlignment="Top">6</RepeatButton>
+                            <TextBox Height="25" Margin="313,155,0,0" Name="txtSensorLess" VerticalAlignment="Top" Grid.Column="8" PreviewKeyUp="txtSensorLess_PreviewKeyUp" PreviewKeyDown="txtSensorLess_PreviewKeyDown" TextChanged="txtSensorLess_TextChanged" Width="137" Grid.ColumnSpan="2" HorizontalAlignment="Left" />
+                            <RepeatButton Name="NUDBtnlessUP"  Grid.Column="9" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" Height="14" HorizontalContentAlignment="Center" Margin="9,154,0,0" Width="21" Click="NUDBtnlessUP_Click" VerticalAlignment="Top" HorizontalAlignment="Left">5</RepeatButton>
+                            <RepeatButton Name="NUDBtnlessDown"  Grid.Column="9" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="9,167,0,0" Width="21" Click="NUDBtnlessDown_Click" Height="14" VerticalAlignment="Top" HorizontalAlignment="Left">6</RepeatButton>
+                            <Line X1="50" Y1="0" X2="50" Y2="205" Stroke="Black" StrokeThickness="1" Canvas.Top="0" Canvas.Left="847" Margin="0,84,276,0" Grid.Column="9" HorizontalAlignment="Right" Width="55" Height="159" VerticalAlignment="Top" />
+                            <Button Content="View Report" Height="25" HorizontalAlignment="Right" Margin="0,205,114,0" Name="btnViewRprt" VerticalAlignment="Top" Width="86" Grid.Column="9" Click="btnViewRprt_Click" FontSize="12" />
+                            <ComboBox Grid.Column="8" Margin="432,86,0,0" Name="combStrAMPM" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="46" Height="25" VerticalAlignment="Top">
+                                <ComboBoxItem Content="AM" IsSelected="True" />
+                                <ComboBoxItem Content="PM" />
+                            </ComboBox>
+                            <TextBox Grid.Column="8" Margin="314,120,0,0" Name="txtEndhr" Height="25" PreviewKeyUp="txtEndhr_PreviewKeyUp" PreviewKeyDown="txtEndhr_PreviewKeyDown" TextChanged="txtEndhr_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31" />
+                            <RepeatButton Name="BtnEndHrUp"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="343,119,0,0" Width="20" Click="BtnEndHrUp_Click" Height="14" VerticalAlignment="Top" HorizontalAlignment="Left">5</RepeatButton>
+                            <RepeatButton Name="BtnEndHrDown"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="343,132,0,0" Click="BtnEndHrDown_Click" Height="14" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20">6</RepeatButton>
+                            <TextBox Grid.Column="8" Margin="374,120,0,0" Name="txtEndMinute" Height="25" PreviewKeyDown="txtEndMinute_PreviewKeyDown" PreviewKeyUp="txtEndMinute_PreviewKeyUp" TextChanged="txtEndMinute_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31" />
+                            <RepeatButton Name="BtnEndMinUp"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="404,119,16,0" Width="20" Click="BtnEndMinUp_Click" Height="14" VerticalAlignment="Top">5</RepeatButton>
+                            <RepeatButton Name="BtnEndMinDown"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" Height="14" HorizontalContentAlignment="Center" Margin="404,132,16,0" Width="20" Click="BtnEndMinDown_Click" VerticalAlignment="Top">6</RepeatButton>
+                            <ComboBox Grid.Column="8" Height="25" Margin="434,120,0,0" Name="comboEndAMPM" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="46">
+                                <ComboBoxItem Content="AM" IsSelected="True" />
+                                <ComboBoxItem Content="PM" />
+                            </ComboBox>
+                            <TextBox Grid.Column="8" Margin="313,86,0,0" Name="txtStrhr" Width="31" Height="25" HorizontalAlignment="Left" PreviewKeyUp="txtStrhr_PreviewKeyUp" PreviewKeyDown="txtStrhr_PreviewKeyDown" TextChanged="txtStrhr_TextChanged" VerticalAlignment="Top" />
+                            <RepeatButton Name="BtnHrUp"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" Height="14" HorizontalContentAlignment="Center" Margin="342,85,0,0" Width="20" Click="BtnHrUp_Click" VerticalAlignment="Top" HorizontalAlignment="Left">5</RepeatButton>
+                            <RepeatButton Name="BtnHrDown"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="342,98,0,0" Click="BtnHrDown_Click" Height="14" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20">6</RepeatButton>
+                            <TextBox Grid.Column="8" Margin="374,86,0,0" Name="txtStrMin" Height="25" PreviewKeyUp="txtStrMin_PreviewKeyUp" PreviewKeyDown="txtStrMin_PreviewKeyDown" TextChanged="txtStrMin_TextChanged" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31" />
+                            <RepeatButton Name="BtnMinuteUp"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="403,85,0,0" Width="20" Click="BtnMinuteUp_Click" HorizontalAlignment="Left" Height="14" VerticalAlignment="Top">5</RepeatButton>
+                            <RepeatButton Name="BtnMinuteDown"  Grid.Column="8" FontSize="8" FontFamily="Marlett" VerticalContentAlignment="Center" Height="14" HorizontalContentAlignment="Center" Margin="403,98,0,0" Width="20" Click="BtnMinuteDown_Click" VerticalAlignment="Top" HorizontalAlignment="Left">6</RepeatButton>
+                            <GroupBox Header="Zone 1" Name="grpBoxZone1" Width="Auto" Margin="16,308,11,0" Grid.ColumnSpan="7" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Name="lstZone1" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone1_SelectionChanged" Margin="15,56,0,0" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone1" IsChecked="{Binding IsSelected}" Click="CheckBoxZone1_Click" Unchecked="CheckBoxZone1_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                    </ListView>
+                                    <ListView Name="lstZone1A" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" Margin="113,58,178,0" SelectionChanged="lstZone1A_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone1A" IsChecked="{Binding IsSelected}" Click="CheckBoxZone1A_Click" Unchecked="CheckBoxZone1A_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Name="lstZone1T" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" Margin="222,59,82,0" SelectionChanged="lstZone1T_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone1T" IsChecked="{Binding IsSelected}" Click="CheckBoxZone1T_Click" Unchecked="CheckBoxZone1T_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Name="lstZone1D1" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" Margin="304,59,11,0" SelectionChanged="lstZone1D1_SelectionChanged_1" Height="Auto" VerticalAlignment="Top" MaxHeight="Infinity" HorizontalAlignment="Right">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone1D1" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone1D1_Checked" Unchecked="CheckBoxZone1D1_Unchecked_1">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Height="16" HorizontalAlignment="Left" Margin="17,24,0,0" Name="chkSelectAll" VerticalAlignment="Top" Width="Auto" Checked="chkSelectAll_Checked" Unchecked="chkSelectAll_Unchecked" />
+                                    <CheckBox Content="Accelerometer" FontSize="12" Foreground="#FF1E5EE6" Height="16" Margin="121,23,167,0" Name="chkAccelerometerZN1" VerticalAlignment="Top" Checked="chkAccelerometerZN1_Checked" Unchecked="chkAccelerometerZN1_Unchecked" />
+                                    <CheckBox Content="Tilt" FontSize="12" Foreground="#FF1E5EE6" Height="16" Margin="236,23,92,0" Name="chkTiltALLZN1" VerticalAlignment="Top" Checked="chkTiltALLZN1_Checked" Unchecked="chkTiltALLZN1_Unchecked" />
+                                    <CheckBox Content="Disp" FontSize="12" Foreground="#FF1E5EE6" Height="16" Margin="325,23,19,0" Name="chkDispALLZN1" VerticalAlignment="Top" Checked="chkDispALLZN1_Checked" Unchecked="chkDispALLZN1_Unchecked" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 2" Name="grpBoxZone2" Margin="15,308,11,0" Grid.Column="7" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Width="Auto">
+                                <Grid Height="Auto" MinHeight="0" Width="Auto">
+                                    <ListView BorderThickness="0" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="18,59,0,0" Name="lst2" SelectionChanged="lst2_SelectionChanged" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" Width="Auto" Height="Auto" VerticalAlignment="Top" MaxHeight="259">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <CheckBox Click="CheckBoxs1_Click" IsChecked="{Binding IsSelected}" Name="CheckBoxs1" Unchecked="CheckBoxs1_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView BorderThickness="0" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="137,59,138,0" Name="lstZone2A" SelectionChanged="lstZone2A_SelectionChanged" VerticalContentAlignment="Stretch" Height="Auto" VerticalAlignment="Top" MaxHeight="Infinity" HorizontalAlignment="Center">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <CheckBox Checked="ChkZone2A_Checked" IsChecked="{Binding IsSelected}" Name="ChkZone2A" Unchecked="ChkZone2A_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView BorderThickness="0" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="250,59,36,0" Name="lstZone2T" SelectionChanged="lstZone2T_SelectionChanged" VerticalContentAlignment="Stretch" Height="Auto" VerticalAlignment="Top" MaxHeight="Infinity" HorizontalAlignment="Right">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <CheckBox Checked="ChkZone2T_Checked" IsChecked="{Binding IsSelected}" Name="ChkZone2T" Unchecked="ChkZone2T_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Margin="19,23,250,0" Name="chkZone2SelectAll" Checked="chkZone2SelectAll_Checked" Unchecked="chkZone2SelectAll_Unchecked" Height="16" VerticalAlignment="Top" />
+                                    <CheckBox Content="Accelerometer" FontSize="12" Foreground="#FF1E5EE6" Margin="179,23,0,0" Name="chkZone2AcclrmtrAll" Checked="chkZone2AcclrmtrAll_Checked" Unchecked="chkZone2AcclrmtrAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                                    <CheckBox Content="Tilt" FontSize="12" Foreground="#FF1E5EE6" Margin="0,24,35,0" Name="chkZone2TiltAll" Checked="chkZone2TiltAll_Checked" Unchecked="chkZone2TiltAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Width="49" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 3" Name="grpBoxZone3" Margin="10,308,0,0" Grid.Column="9" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" FlowDirection="LeftToRight" HorizontalAlignment="Stretch" Width="Auto">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Margin="12,59,251,17" Name="lstZone3" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone3_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone3" IsChecked="{Binding IsSelected}" Click="CheckBoxZone3_Click" Unchecked="CheckBoxZone3_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Margin="150,59,133,0" Name="lstZone3A" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone3A_SelectionChanged" VerticalAlignment="Top" Height="Auto" MinHeight="0">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone3A" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone3A_Checked" Unchecked="CheckBoxZone3A_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Margin="273,59,18,0" Name="lstZone3T" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone3T_SelectionChanged" Height="Auto" VerticalAlignment="Top">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone3T" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone3T_Checked" Unchecked="CheckBoxZone3T_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+
+
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Margin="19,19,0,0" Name="chkZone3SelectAll" Checked="chkZone3SelectAll_Checked" Unchecked="chkZone3SelectAll_Unchecked" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" />
+                                    <CheckBox Content="Accelerometer" FontSize="12" Foreground="#FF1E5EE6" HorizontalAlignment="Left" Margin="147,19,0,0" Name="chkZone3AcclrmtrAll" Width="Auto" Checked="chkZone3AcclrmtrAll_Checked" Unchecked="chkZone3AcclrmtrAll_Unchecked" Height="14" VerticalAlignment="Top" />
+                                    <CheckBox Content="Tilt" FontSize="12" Foreground="#FF1E5EE6" HorizontalAlignment="Left" Margin="280,20,0,0" Name="chkZone3tiltAll" Width="Auto" Checked="chkZone3tiltAll_Checked" Unchecked="chkZone3tiltAll_Unchecked" Height="14" VerticalAlignment="Top" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 4" Name="grpBoxZone4" Margin="15,702,0,0" Grid.ColumnSpan="5" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="Auto">
+                                <Grid Height="Auto" MinHeight="0" Width="Auto">
+                                    <ListView BorderThickness="0" Height="Auto" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="13,59,266,0" Name="lstZone4" SelectionChanged="lstZone4_SelectionChanged" VerticalAlignment="Top" VerticalContentAlignment="Stretch" MaxWidth="Infinity" HorizontalAlignment="Left">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                    <CheckBox Click="CheckBoxZone4_Click" IsChecked="{Binding IsSelected}" Name="CheckBoxZone4" Unchecked="CheckBoxZone4_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView BorderThickness="0" Height="Auto" HorizontalAlignment="Center" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="114,59,177,0" Name="lstZone4A" SelectionChanged="lstZone4A_SelectionChanged" VerticalAlignment="Top" VerticalContentAlignment="Stretch" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                    <CheckBox Checked="CheckBoxZone4A_Checked" IsChecked="{Binding IsSelected}" Name="CheckBoxZone4A" Unchecked="CheckBoxZone4A_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView BorderThickness="0" Height="Auto" HorizontalAlignment="Center" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="213,59,84,0" Name="lstZone4T" SelectionChanged="lstZone4T_SelectionChanged" VerticalAlignment="Top" VerticalContentAlignment="Stretch" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                    <CheckBox Checked="CheckBoxZone4T_Checked" IsChecked="{Binding IsSelected}" Name="CheckBoxZone4T" Unchecked="CheckBoxZone4T_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView BorderThickness="0" Height="Auto" HorizontalAlignment="Right" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" Margin="302,59,6,0" Name="lstZone4D" SelectionChanged="lstZone4D_SelectionChanged" VerticalAlignment="Top" VerticalContentAlignment="Stretch" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="Black" BorderThickness="1" Padding="5">
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                    <CheckBox Checked="CheckBoxZone4D_Checked" IsChecked="{Binding IsSelected}" Name="CheckBoxZone4D" Unchecked="CheckBoxZone4D_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}" />
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Checked="chkZone4SelectAll_Checked" FontSize="12" Content="Strain Sensors" Foreground="#FF1E5EE6" Height="16" HorizontalAlignment="Left" Margin="16,28,0,0" Name="chkZone4SelectAll" Unchecked="chkZone4SelectAll_Unchecked" VerticalAlignment="Top" Width="95" />
+                                    <CheckBox Checked="chkZone4AcclermtrAll_Checked" FontSize="12" Content="Accelerometer" Foreground="#FF1E5EE6" Height="16" HorizontalAlignment="Left" Margin="126,28,0,0" Name="chkZone4AcclermtrAll" Unchecked="chkZone4AcclermtrAll_Unchecked" VerticalAlignment="Top" Width="Auto" />
+                                    <CheckBox Checked="chkZone4TiltAll_Checked" FontSize="12" Content="Tilt" Foreground="#FF1E5EE6" HorizontalAlignment="Left" Margin="236,28,0,0" Name="chkZone4TiltAll" Unchecked="chkZone4TiltAll_Unchecked" Width="Auto" Height="18" VerticalAlignment="Top" />
+                                    <CheckBox Checked="chkZone4DispAll_Checked" FontSize="12" Content="Disp" Foreground="#FF1E5EE6" Margin="0,28,13,0" Name="chkZone4DispAll" Unchecked="chkZone4DispAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Width="49" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 5" Name="grpBoxZone5" Margin="63,702,62,0" Grid.Column="8" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" Width="Auto">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Height="Auto" Margin="20,58,168,0" Name="lstZone5" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone5_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone5" IsChecked="{Binding IsSelected}" Click="CheckBoxZone5_Click" Unchecked="CheckBoxZone5_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Height="Auto" Margin="146,58,30,0" Name="lstZone5A" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone5A_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone5A" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone5A_Checked" Unchecked="CheckBoxZone5A_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" HorizontalAlignment="Left" Margin="19,27,0,0" Name="chkZone5SelectAll" Width="Auto" Checked="chkZone5SelectAll_Checked" Unchecked="chkZone5SelectAll_Unchecked" Height="19" VerticalAlignment="Top" />
+                                    <CheckBox Content="Accelerometer" FontSize="12" Foreground="#FF1E5EE6" HorizontalAlignment="Left" Margin="150,27,0,0" Name="chkZone5AcclrtmtrAll" Width="Auto" Checked="chkZone5AcclrtmtrAll_Checked" Unchecked="chkZone5AcclrtmtrAll_Unchecked" Height="15" VerticalAlignment="Top" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 6" Name="grpBoxZone6" Margin="36,702,36,0" Grid.Column="9" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Height="Auto" Margin="22,59,162,0" Name="lstZone6" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone6_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone6" IsChecked="{Binding IsSelected}" Click="CheckBoxZone6_Click" Unchecked="CheckBoxZone6_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Height="Auto" Margin="156,59,37,0" Name="lstZone6A" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone6A_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone6A" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone6A_Checked" Unchecked="CheckBoxZone6A_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Margin="25,28,0,0" Name="chkZone6SelectAll" Checked="chkZone6SelectAll_Checked" Unchecked="chkZone6SelectAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" />
+                                    <CheckBox Content="Accelerometer" FontSize="12" Foreground="#FF1E5EE6" Margin="155,28,0,0" Name="chkZone6AcclermtrAll" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Checked="chkZone6AcclermtrAll_Checked" Unchecked="chkZone6AcclermtrAll_Unchecked" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 8" Name="grpBoxZone8" Margin="7,1093,400,0" Grid.ColumnSpan="7" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" Width="Auto" Grid.Column="2">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Margin="9,53,97,52" Name="lstZone8" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone8_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone8" IsChecked="{Binding IsSelected}" Click="CheckBoxZone8_Click" Unchecked="CheckBoxZone8_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Margin="97,53,6,0" Name="lstZone8D" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone8D_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Center">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone8D" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone8D_Checked" Unchecked="CheckBoxZone8D_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Margin="9,25,0,0" Name="chkZone8SelectAll" Checked="chkZone8SelectAll_Checked" Unchecked="chkZone8SelectAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" />
+                                    <CheckBox Content="Disp" FontSize="12" Foreground="#FF1E5EE6" Margin="169,25,0,0" Name="chkZone8DispAll" Height="16" VerticalAlignment="Top" Checked="chkZone8DispAll_Checked" Unchecked="chkZone8DispAll_Unchecked" HorizontalAlignment="Left" Width="51" />
+
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 9" Name="grpBoxZone9" Margin="64,1093,12,0" Grid.Column="8" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" Width="Auto">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="276*" />
+                                        <ColumnDefinition Width="4*" />
+                                    </Grid.ColumnDefinitions>
+                                    <ListView Height="Auto" Margin="25,62,156,0" Name="lstZone9" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone9_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone9" IsChecked="{Binding IsSelected}" Click="CheckBoxZone9_Click" Unchecked="CheckBoxZone9_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Height="Auto" Margin="153,62,33,0" Name="lstZone9D" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone9D_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone9D" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone9D_Checked" Unchecked="CheckBoxZone9D_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>                                  
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Height="16" HorizontalAlignment="Left" Margin="26,31,0,0" Name="chkZone9SelectAll" VerticalAlignment="Top" Width="Auto" Checked="chkZone9SelectAll_Checked" Unchecked="chkZone9SelectAll_Unchecked" />
+                                    <CheckBox Content="Disp" FontSize="12" Foreground="#FF1E5EE6" Height="16" HorizontalAlignment="Left" Margin="217,31,0,0" Name="chkZone9DispAll" VerticalAlignment="Top" Width="Auto" Checked="chkZone9DispAll_Checked" Unchecked="chkZone9DispAll_Unchecked" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Zone 10" Name="grpBoxZone10" Margin="21,1093,10,0" Grid.Column="9" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Height="Auto" Margin="22,61,238,0" Name="lstZone10" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone10_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone10" IsChecked="{Binding IsSelected}" Click="CheckBoxZone10_Click" Unchecked="CheckBoxZone10_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Height="Auto" Margin="151,61,124,0" Name="lstZone10D" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone10D_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone10D" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone10D_Checked" Unchecked="CheckBoxZone10D_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <ListView Height="Auto" Margin="262,64,6,0" Name="lstZone10P" VerticalAlignment="Top" ItemsSource="{Binding}" HorizontalAlignment="Right" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone10P_SelectionChanged" MaxHeight="Infinity">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone10P" IsChecked="{Binding IsSelected}" Checked="CheckBoxZone10P_Checked" Unchecked="CheckBoxZone10P_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Strain Sensors" FontSize="12" Foreground="#FF1E5EE6" Margin="29,30,0,0" Name="chkZone10SelectAll" Checked="chkZone10SelectAll_Checked" Unchecked="chkZone10SelectAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="102" />
+                                    <CheckBox Content="Disp" FontSize="12" Foreground="#FF1E5EE6" Margin="158,30,164,0" Name="chkZone10DispAll"  Height="16" VerticalAlignment="Top" Checked="chkZone10DispAll_Checked" Unchecked="chkZone10DispAll_Unchecked" />
+                                    <CheckBox Content="Tilt" FontSize="12" Foreground="#FF1E5EE6" Margin="0,30,42,0" Name="chkZone10ptypeAll"  Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Width="Auto" Checked="chkZone10ptypeAll_Checked" Unchecked="chkZone10ptypeAll_Unchecked" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Column="9" Header="Prepared Reports" Height="Auto" Margin="0,80,48,0" Name="grupDaysReport" VerticalAlignment="Top" HorizontalAlignment="Right" Width="Auto" FontSize="14">
+                                <Grid Height="84">                                    
+                                    <RadioButton Content="Last 7 Days" Height="16" Margin="29,13,63,0" Name="rdbtn7dys" VerticalAlignment="Top" Click="rdbtn7dys_Click" Grid.Column="1" FontSize="12" />
+                                    <RadioButton Content="Last 30 Days" Margin="28,34,50,31" Name="rdbtn30dys" Click="rdbtn30dys_Click" Grid.Column="1" FontSize="12" />
+                                    <RadioButton Content="Last 90 Days" Margin="28,56,52,9" Name="rdbtn90dys"  Click="rdbtn90dys_Click" Grid.Column="1" FontSize="12" />
+                                </Grid>
+                            </GroupBox>
+                            <CheckBox Content="Peak Events Only" Grid.Column="2" Grid.ColumnSpan="3" Height="25" Margin="25,194,81,0" Name="rdbSelectPeak" VerticalAlignment="Top" Click="rdbSelectPeak_Click" FontSize="12" Width="119" />
+                            <CheckBox Content="Select All Sensors Readings" Foreground="#FF1E5EE6" Height="16" Margin="21,278,110,0" Name="chkAllSensorReading" VerticalAlignment="Top" Checked="chkAllSensorReading_Checked" Unchecked="chkAllSensorReading_Unchecked" FontSize="12" Grid.ColumnSpan="3" Width="Auto" />
+                            <GroupBox Header="Zone 7" Name="grpBoxZone7" Margin="12,1093,10.467,0" Foreground="#FF1E5EE6" FontSize="14" Height="367" VerticalAlignment="Top" UseLayoutRounding="False">
+                                <Grid Height="Auto" Width="Auto" MinHeight="0">
+                                    <ListView Margin="33,60,0,0" Name="lstZone7" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" SelectionChanged="lstZone7_SelectionChanged" Height="Auto" VerticalAlignment="Top" MaxHeight="Infinity" HorizontalAlignment="Left" Width="Auto">
+                                        <ListView.Background>
+                                            <SolidColorBrush />
+                                        </ListView.Background>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" BorderThickness="1" BorderBrush="Black">
+                                                    <CheckBox Name="CheckBoxZone7" IsChecked="{Binding IsSelected}" Click="CheckBoxZone7_Click" Unchecked="CheckBoxZone7_Unchecked">
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding ObjectData}"></TextBlock>
+                                                        </StackPanel>
+                                                    </CheckBox>
+                                                    <Border.Background>
+                                                        <SolidColorBrush />
+                                                    </Border.Background>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                    <CheckBox Content="Accelerometer" FontSize="12" Foreground="#FF1E5EE6" Margin="34,24,20,0" Name="chkZone7SelectAll" Checked="chkZone7SelectAll_Checked" Unchecked="chkZone7SelectAll_Unchecked" Height="16" VerticalAlignment="Top" />
+                                </Grid>
+                            </GroupBox>
+                            <Image Height="60" Margin="6,5,47,0" Name="imagelogoReport" Stretch="Fill" VerticalAlignment="Top" Width="137" Source="/IntelliOpticsReport;component/Images/logo.png" StretchDirection="Both" HorizontalAlignment="Stretch" />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="ReportOutput" Name="tabGraph" VerticalAlignment="Top">
+                    <StackPanel Height="Auto" Width="Auto" VerticalAlignment="Top" IsManipulationEnabled="False">
+                        <Grid MinHeight="0" Background="White" ShowGridLines="False" Height="990" Width="{Binding ElementName=gridtabfilter,Path=ActualWidth}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="203*" />
+                                <RowDefinition Height="718*" />
+                            </Grid.RowDefinitions>                            
+                            <DockPanel Margin="0,0,0,167" Name="dockPanel1" VerticalAlignment="Stretch" Background="#FFCEC9EE" Height="51" HorizontalAlignment="Stretch">
+                                <Image Height="27" Name="imgFirst"  Stretch="UniformToFill" Width="24" Margin="10" MouseDown="imgFirst_MouseDown" Source="/IntelliOpticsReport;component/Image/prev_icon.png" />
+                                <Image Height="27" Margin="10" Name="imgPrevious"  Stretch="Fill" Width="22" MouseDown="imgPrevious_MouseDown" Source="/IntelliOpticsReport;component/Image/prev_end.png" />
+                                <TextBox Height="27" Margin="10" Name="txtCurrentPgindex" Width="75" HorizontalContentAlignment="Center" />
+                                <Label Content="of 1" FontSize="11" Height="27" Margin="10" Name="lblTotalCount" Width="104" DockPanel.Dock="Left" />
+                                <Image Height="27" Margin="10" Name="imgNext"  Stretch="Fill" Width="23" MouseDown="imgNext_MouseDown" Source="/IntelliOpticsReport;component/Image/next_end.png" />
+                                <Image Height="27" Margin="10" Name="imgLast"  Stretch="Fill" Width="25" MouseDown="imgLast_MouseDown" Source="/IntelliOpticsReport;component/Image/next_icon.png" />
+                                <ComboBox Height="23" IsEditable="True" Margin="10" Name="cmbPercentage" Text="Select Percentage" Width="147" HorizontalContentAlignment="Center">
+                                    <ComboBoxItem Content="100%" Name="cbi1" />
+                                    <ComboBoxItem Content="50%" Name="cbi2" />
+                                </ComboBox>
+                                <TextBox Height="23" Margin="10" Name="txtFind" Width="137" Style="{DynamicResource txtFindStyle}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="" />
+                                <Button Content="Find" Height="23" Margin="10" Name="btnFind" Width="75" Click="btnFind_Click" />
+                                <Button Content="Next" Height="23" Margin="10" Name="btnNext" Width="75" Click="btnNext_Click" />
+                                <Image Height="23" Margin="10" Name="image2"  Stretch="Fill" Width="19" Source="/IntelliOpticsReport;component/Image/printer_icon.png" />
+                                <Image Height="23" Margin="0" Name="image1"  Stretch="Fill" Width="18" DockPanel.Dock="Left" Source="/IntelliOpticsReport;component/Image/refresh_icon.png" />
+                                <Button Content="Report Export" Height="23" Name="btnReport" Width="88" Click="btnReport_Click" />
+                            </DockPanel>
+                            <Label Content="Label" Height="35" HorizontalAlignment="Left" Margin="243,98,0,0" Name="lblReadingFrom" VerticalAlignment="Top" Foreground="#FF1E5EE6" Visibility="Hidden" FontStretch="Normal" />
+                            <Grid Height="373" HorizontalAlignment="Stretch" Margin="7,131,0,0" Name="gridPllotter" VerticalAlignment="Top" Grid.RowSpan="2">
+                            <d3:ChartPlotter Name="plotter" Margin="3,0,5,20" VerticalContentAlignment="Stretch" LegendVisible="False" HorizontalContentAlignment="Stretch" Width="Auto">
+                                <d3:ChartPlotter.HorizontalAxis>
+                                    <d3:HorizontalDateTimeAxis Name="dateAxis" />
+                                </d3:ChartPlotter.HorizontalAxis>
+                                <d3:VerticalAxisTitle FontFamily="Georgia" Content="Sensor Readings" />
+                                <d3:HorizontalAxisTitle FontFamily="Georgia" Content="Date"></d3:HorizontalAxisTitle>
+                            </d3:ChartPlotter>
+                           </Grid>
+                            <DataGrid AutoGenerateColumns="True" RowHeaderWidth="0" Visibility="Hidden" Block.TextAlignment="Center" CanUserAddRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False" MinColumnWidth="65"  GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="All" RowHeight="30" HorizontalAlignment="Left" Margin="185,330,0,0" Name="dtgMax" Width="Auto" Foreground="SteelBlue" Grid.Row="1" SelectionUnit="Cell" Height="Auto" VerticalAlignment="Top" MaxWidth="1920">
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                    <Style x:Key="Body_Content_DataGrid_Centering" TargetType="{x:Type DataGridCell}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                                    <Grid Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGrid.Resources>
+                            </DataGrid>
+                            <DataGrid AutoGenerateColumns="True" RowHeaderWidth="0" Visibility="Hidden" Block.TextAlignment="Center" CanUserAddRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False" MinColumnWidth="65"  GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="All" RowHeight="30" HorizontalAlignment="Left" Margin="184,399,0,0" Name="dtgMin" Width="Auto" Foreground="SteelBlue" Grid.Row="1" SelectionUnit="Cell" Height="Auto" VerticalAlignment="Top" MaxWidth="1920">
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                    <Style x:Key="Body_Content_DataGrid_Centering" TargetType="{x:Type DataGridCell}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                                    <Grid Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGrid.Resources>
+                            </DataGrid>
+                            <DataGrid AutoGenerateColumns="True" RowHeaderWidth="0" Visibility="Hidden" Block.TextAlignment="Center" CanUserAddRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False" MinColumnWidth="65"  GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="All" RowHeight="30" HorizontalAlignment="Left" Margin="183,466,0,0" Name="dtgAvg" Width="Auto" Foreground="SteelBlue" Grid.Row="1" SelectionUnit="Cell" Height="Auto" VerticalAlignment="Top" MaxWidth="1920">
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                    <Style x:Key="Body_Content_DataGrid_Centering" TargetType="{x:Type DataGridCell}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                                    <Grid Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGrid.Resources>
+                            </DataGrid>
+                            <Label Content="Maximum Reading =" HorizontalAlignment="Left" Margin="46,324,0,0" Name="lblMaximum" Foreground="#FF1E5EE6" FontStretch="Normal" FontSize="12" Grid.Row="1" Height="28" VerticalAlignment="Top" />
+                            <Label Content="Minimum Reading =" HorizontalAlignment="Left" Margin="47,393,0,0" Name="lblMinimum" Foreground="#FF1E5EE6" FontStretch="Normal" FontSize="12" Grid.Row="1" Height="28" VerticalAlignment="Top" />
+                            <Label Content="Average Reading =" HorizontalAlignment="Left" Margin="46,461,0,0" Name="lblAverage" Foreground="#FF1E5EE6" FontStretch="Normal" FontSize="12" Grid.Row="1" Height="28" VerticalAlignment="Top" />
+                            <DataGrid Visibility="Hidden" VirtualizingStackPanel.VirtualizationMode="Standard" CanUserAddRows="False" ColumnHeaderHeight="32" MinColumnWidth="65" HorizontalGridLinesBrush="DarkKhaki" VerticalGridLinesBrush="DarkKhaki" BorderBrush="DarkKhaki" Block.TextAlignment="Center" AutoGenerateColumns="True" CanUserResizeColumns="False" CanUserReorderColumns="False" HorizontalAlignment="Left" Margin="63,540,0,0" Name="dtgSensorReadingList" ItemsSource="{Binding}" Grid.Row="1" Height="Auto" VerticalAlignment="Top" MaxWidth="1920" Width="Auto" SelectionUnit="Cell">
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background" Value="SteelBlue" />
+                                        <Setter Property="Foreground" Value="white" />
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                    <Style TargetType="{x:Type DataGridRowHeader}">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Style>
+                                    <Style x:Key="Body_Content_DataGrid_Centering" TargetType="{x:Type DataGridCell}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                                    <Grid Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGrid.Resources>
+                            </DataGrid>
+                            <Label Content="Selected StartDate" Grid.Row="1" Margin="21,290,0,0" Name="lblRportStartDate" HorizontalAlignment="Left" Width="Auto" FontSize="12" Height="28" VerticalAlignment="Top" />
+                            <Label Content="End Date" Grid.Row="1" Margin="0,290,4,0" Name="lblRportEndDate" HorizontalAlignment="Right" Width="Auto" FontSize="12" Height="28" VerticalAlignment="Top" />
+                            <ListView Margin="0,139,7,0" Name="listview" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" MaxHeight="260" HorizontalAlignment="Right" Width="Auto" VerticalAlignment="Top" Height="Auto" Grid.RowSpan="2">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Text}" Foreground="{Binding BackgroundColor}">
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.BorderBrush>
+                                    <SolidColorBrush />
+                                </ListView.BorderBrush>
+                            </ListView>
+                            <Image Height="60" HorizontalAlignment="Left" Margin="3,53,0,0" Name="imagelogoReportOutput" Stretch="Fill" VerticalAlignment="Top" Width="137" Source="/IntelliOpticsReport;component/Images/logo.png" />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Reporting" Name="tabRepoting" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">                    
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="grdreporting">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <WindowsFormsHost MinHeight="0" Margin="15,77,30,46" Name="WFHostReporting" Visibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding ElementName=gridtabfilter, Path=ActualWidth}" Height="{StaticResource Height1}">
+                                <rv:ReportViewer x:Name="_reportViewer" AutoScroll="True" />
+                            </WindowsFormsHost>
+                        </ScrollViewer>
+                        <Image Height="60" HorizontalAlignment="Left" Margin="14,7,0,0" Name="imagelogoreporting" Stretch="Fill" VerticalAlignment="Top" Width="137" Source="/IntelliOpticsReport;component/Images/logo.png" />
+                    </Grid>                    
+                </TabItem>
+            </TabControl>            
+        </Grid>
+    </ScrollViewer>
+</Window>
+
